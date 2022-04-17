@@ -8,7 +8,8 @@ from deep_translator import GoogleTranslator # don't forget to "pip install deep
 
 # Settings for this run
 text = 'A Nerdy Rodent'
-num_images = 6 # (4)
+num_images = 4 # (4)
+batch_size = 4 # (4)
 top_k = 1024 # (1024)
 top_p = 0.975 # (0.975)
 image_save_dir = 'rodents'
@@ -29,7 +30,7 @@ dalle = get_rudalle_model('Surrealist_XL', fp16=True, device=device, cache_dir=c
 vae, tokenizer = get_vae().to(device), get_tokenizer(cache_dir=cache_dir)
 rudalle_ar = RuDalleAspectRatio(
     dalle=dalle, vae=vae, tokenizer=tokenizer,
-    aspect_ratio=aspect_ratio, bs=num_images, device=device,
+    aspect_ratio=aspect_ratio, bs=batch_size, device=device,
 )
 _, result_pil_images = rudalle_ar.generate_images(translated, top_k, top_p, num_images)
 
