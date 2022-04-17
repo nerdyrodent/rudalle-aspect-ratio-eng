@@ -13,7 +13,7 @@ top_k = 1024 # (1024)
 top_p = 0.975 # (0.975)
 image_save_dir = 'rodents'
 image_prefix = 'version_3'
-aspect_ratio = 9/32 # (32/9) or (32/9)
+aspect_ratio = 32/9 # (32/9), (9/32), etc
 cache_dir = '/home/nerdy/github/Russian-DALLE/cache'
 
 # Seed is random by default
