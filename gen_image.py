@@ -15,13 +15,16 @@ top_p = 0.975 # (0.975)
 image_save_dir = 'rodents'
 image_prefix = 'version_1'
 aspect_ratio = 32/9 # (32/9), (9/32), etc
-cache_dir = '/home/nerdy/github/Russian-DALLE/cache'
+cache_dir = './cache'
 
 # Seed is random by default
 
 # Do run
 if not os.path.exists(image_save_dir):
     os.mkdir(image_save_dir)
+
+if not os.path.exists(cache_dir):
+    os.mkdir(cache_dir)
 
 device = 'cuda'
 translated = GoogleTranslator(source='auto', target='ru').translate(text)
