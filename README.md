@@ -17,7 +17,7 @@ git clone https://github.com/shonenkov-AI/rudalle-aspect-ratio
 ### Quick Start
 
 Horizontal images:
-The file ```gen_horiz_image.py``` has some basic changes to the default example. Changes include:
+The file ```gen_image.py``` has some basic changes to the default example. Changes include:
 * Translation from any supported language into Russian
 * Saves individual images in a user-specified location with a user-specified prefix
 * User-specified cache directory
