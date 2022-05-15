@@ -30,7 +30,7 @@ device = 'cuda'
 translated = GoogleTranslator(source='auto', target='ru').translate(text)
 
 dalle = get_rudalle_model('Surrealist_XL', fp16=True, device=device, cache_dir=cache_dir)
-vae, tokenizer = get_vae().to(device), get_tokenizer(cache_dir=cache_dir)
+vae, tokenizer = get_vae(cache_dir=cache_dir).to(device), get_tokenizer(cache_dir=cache_dir)
 rudalle_ar = RuDalleAspectRatio(
     dalle=dalle, vae=vae, tokenizer=tokenizer,
     aspect_ratio=aspect_ratio, bs=batch_size, device=device,
